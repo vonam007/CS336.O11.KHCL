@@ -127,8 +127,10 @@ script.onload = function () {
 
             xhr.onreadystatechange = function () {
                 if (xhr.readyState === 4 && xhr.status === 200) {
-                    const response = JSON.parse(xhr.responseText);
-
+                    
+                    
+                    const jsonString = JSON.stringify(xhr.responseText);   
+                    const response = JSON.parse(jsonString);
                     if (isJSON(response)) {
                         console.log("Response is a valid JSON.");
                         const jsonResponse = JSON.parse(response);
