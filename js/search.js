@@ -104,7 +104,7 @@ script.onload = function () {
 
         // Gửi dữ liệu tìm kiếm đến API
         function sendDataToAPI(Data) {
-            const BASE = "https://b50d-34-87-153-0.ngrok-free.app"; // Replace with your Flask API URL
+            const BASE = "https://c33f-34-87-153-0.ngrok-free.app"; // Replace with your Flask API URL
 
             const apiUrl = BASE + "/search"; // Replace with your Flask API endpoint
 
