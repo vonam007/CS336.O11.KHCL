@@ -152,10 +152,6 @@ script.onload = function () {
             const result = $("#result");
             result.empty();
 
-            const rank = jsonResponse["rank"];
-            const score = jsonResponse["score"];
-            const docs = jsonResponse["docs"];
-
             var table = $("<table id='resultTable'>");
             table.addClass("hidden")
             var titleTr = $("<tr>");
@@ -164,11 +160,12 @@ script.onload = function () {
             titleTr.append($("<th>").append($("<p>").text("Passages")));
             table.append(titleTr);
 
-            for (let i = 0; i < jsonResponse.rank.length; i++) {
+            for (let i = 0; i < 3; i++) {
+                let item = jsonResponse[i]
                 var row = $("<tr>");
-                row.append($("<td>").append(($("<p>").text(rank[i]))));
-                row.append($("<td>").append(($("<p>").text(score[i]))));
-                row.append($("<td>").append(($("<p>").text(docs[i]))));
+                row.append($("<td>").append(($("<p>").text(item["rank"]))));
+                row.append($("<td>").append(($("<p>").text(item["score"]))));
+                row.append($("<td>").append(($("<p>").text(item["doc"]))));
                 table.append(row);
             }
 
