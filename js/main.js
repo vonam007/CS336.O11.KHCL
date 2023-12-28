@@ -2,7 +2,7 @@ document.addEventListener('DOMContentLoaded', function () {
 
     var navItems = document.querySelectorAll('.nav-item');
 
-    if (window.location.pathname.split("/").pop() == 'home') {
+    if (window.location.pathname.split("/").pop() == 'home' || window.location.pathname.split("/").pop() == 'home.html') {
         navItems[0].classList.add('active');
     }
     if (window.location.pathname.split("/").pop() == 'about') {
