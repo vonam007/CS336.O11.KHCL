@@ -104,7 +104,7 @@ script.onload = function () {
 
         // Gửi dữ liệu tìm kiếm đến API
         function sendDataToAPI(Data) {
-            const BASE = "https://fb5f-34-127-106-34.ngrok-free.app"; // Replace with your Flask API URL
+            const BASE = "https://343a-34-87-153-0.ngrok-free.app"; // Replace with your Flask API URL
 
             const apiUrl = BASE + "/search"; // Replace with your Flask API endpoint
 
@@ -134,7 +134,7 @@ script.onload = function () {
                         const jsonResponse = JSON.parse(response);
                         console.log(jsonResponse);
                         // Do something with jsonResponse here
-                        //printResult(jsonResponse);
+                        printResult(jsonResponse);
                     } else {
                         console.log("Response is not a valid JSON.");
                         console.log(response);
