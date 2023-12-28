@@ -165,7 +165,7 @@ script.onload = function () {
             for (let i = 0; i < 3; i++) {
                 let item = jsonResponse[i]
                 var row = $("<tr>");
-                row.append($("<td>").append(($("<p>").text(item["rank"]))));
+                row.append($("<td>").append(($("<p>").text("["+item["rank"]+"]"))));
                 row.append($("<td>").append(($("<p>").text(item["score"]))));
                 row.append($("<td>").append(($("<p>").text(item["doc"]))));
                 table.append(row);
