@@ -2,13 +2,13 @@ document.addEventListener('DOMContentLoaded', function () {
 
     var navItems = document.querySelectorAll('.nav-item');
 
-    if (window.location.pathname.split("/").pop() == 'home.html') {
+    if (window.location.pathname.split("/").pop() == 'home') {
         navItems[0].classList.add('active');
     }
-    if (window.location.pathname.split("/").pop() == 'about.html') {
+    if (window.location.pathname.split("/").pop() == 'about') {
         navItems[2].classList.add('active');
     }
-    if (window.location.pathname.split("/").pop() == 'search.html') {
+    if (window.location.pathname.split("/").pop() == 'search') {
         navItems[1].classList.add('active-special');
     }
 
