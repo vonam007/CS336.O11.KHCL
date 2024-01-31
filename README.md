@@ -102,4 +102,4 @@ python app.py
 ```
   
 ## [DEMO VIDEO](#top)
-Bạn có thể xem video demo tại [đây](https://drive.google.com/drive/folders/1v_Q-y_l-whS1UIBlAvTw2d1Sa--xKJVw?usp=share_link).
+Bạn có thể xem video demo tại [đây]().
