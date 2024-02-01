@@ -7,7 +7,7 @@ from scipy.spatial.distance import cosine
 import cv2 as cv
 from pathlib import Path
 from tqdm import tqdm
-from feature_extraction import VGG16_FE, Xception_FE
+from feature_extraction import VGG16_FE, Xception_FE, ResNet50_FE, MobileNetV2__FE
 import argparse
 
 def indexing():
@@ -174,8 +174,12 @@ if __name__ == "__main__":
     method = args.m
     if method == 'VGG16':
         feature_extractor = VGG16_FE()
-    else:
+    elif method == 'Xception':
         feature_extractor = Xception_FE()
+    elif method == 'ResNet50':
+        feature_extractor = ResNet50_FE()
+    elif method == 'MobileNetV2':
+        feature_extractor = MobileNetV2__FE()
 
     dataset_folder_path = Path('static/datasets') / dataset_name
     if not dataset_folder_path.exists():
