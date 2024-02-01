@@ -1,7 +1,7 @@
 import numpy as np
 from keras.models import Model
 from keras.utils import img_to_array
-from keras.applications import xception, vgg16
+from keras.applications import xception, vgg16, resnet50, mobilenet_v2
 
 
 class VGG16_FE:
@@ -40,4 +40,38 @@ class Xception_FE:
 
         return feature
     
+class ResNet50_FE:
+    def __init__(self) -> None:
+        base_model = resnet50.ResNet50()
+        self.model = Model(inputs=base_model.input, outputs=base_model.get_layer('avg_pool').output)
 
+    def extract_features(self, image) -> np.ndarray:
+        image = image.resize((224, 224))
+        image = image.convert('RGB')
+
+        array = img_to_array(image)
+        array = np.expand_dims(array, axis=0)
+        array = resnet50.preprocess_input(array)
+
+        features = self.model.predict(array)[0]
+        features /= np.linalg.norm(features)
+
+        return features
+
+class MobileNetV2__FE:
+    def __init__(self) -> None:
+        base_model = mobilenet_v2.MobileNetV2()
+        self.model = Model(inputs=base_model.input, outputs=base_model.get_layer('global_average_pooling2d').output)
+
+    def extract_features(self, image) -> np.ndarray:
+        image = image.resize((224, 224))
+        image = image.convert('RGB')
+
+        array = img_to_array(image)
+        array = np.expand_dims(array, axis=0)
+        array = mobilenet_v2.preprocess_input(array)
+
+        features = self.model.predict(array)[0]
+        features /= np.linalg.norm(features)
+
+        return features
