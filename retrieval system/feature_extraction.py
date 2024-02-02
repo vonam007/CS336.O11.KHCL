@@ -1,7 +1,7 @@
 import numpy as np
 from keras.models import Model
 from keras.utils import img_to_array
-from keras.applications import xception, vgg16, resnet50, mobilenet_v2
+from keras.applications import xception, vgg16, resnet50, mobilenet_v2, efficientnet_v2, inception_v3
 
 
 class VGG16_FE:
@@ -75,3 +75,39 @@ class MobileNetV2__FE:
         features /= np.linalg.norm(features)
 
         return features
+
+class EfficientNetV2_FE:
+    def __init__(self) -> None:
+        base_model = efficientnet_v2.EfficientNetV2S() 
+        self.model = Model(inputs=base_model.input, outputs=base_model.get_layer('top_dropout').output)
+
+    def extract(self, image) -> np.ndarray:
+        image = image.resize((384, 384))
+        image = image.convert('RGB')
+
+        array = img_to_array(image)
+        array = np.expand_dims(array, axis=0)
+        array = efficientnet_v2.preprocess_input(array)
+
+        feature = self.model.predict(array)[0]
+        feature = feature / np.linalg.norm(feature)
+
+        return feature
+
+class InceptionV3_FE:
+    def __init__(self) -> None:
+        base_model = inception_v3.InceptionV3() 
+        self.model = Model(inputs=base_model.input, outputs=base_model.get_layer('avg_pool').output)
+
+    def extract(self, image) -> np.ndarray:
+        image = image.resize((299, 299))
+        image = image.convert('RGB')
+
+        array = img_to_array(image)
+        array = np.expand_dims(array, axis=0)
+        array = inception_v3.preprocess_input(array)
+
+        feature = self.model.predict(array)[0]
+        feature = feature / np.linalg.norm(feature)
+
+        return feature
