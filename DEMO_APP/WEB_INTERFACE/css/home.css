@@ -1,0 +1,99 @@
+@import url(style.css);
+
+body {
+    background-color: var(--Dark-Blue)
+}
+
+.bg {
+    position: absolute;
+    top: 0;
+    z-index: -100;
+    height: 100vh;
+    width: 100%;
+    overflow: hidden;
+}
+
+.bg .blur1 {
+    border-radius: 37rem;
+    background: rgba(139, 138, 218, 0.50);
+    width: 37rem;
+    height: 37rem;
+    filter: blur(153px);
+    transform: translate(10rem, -35rem);
+}
+
+.bg .blur2 {
+    border-radius: 37rem;
+    opacity: 0.8;
+    background: #8CD0D0;
+    width: 37rem;
+    height: 37rem;
+    filter: blur(153px);
+    transform: translate(100rem, -10rem);
+}
+
+.section {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 0 7rem;
+}
+
+.left-col {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 2.25rem;
+}
+
+.left-col .title {
+    color: #FFF;
+    font-family: 'Outfit';
+    font-size: 6.875rem;
+    font-weight: 700;
+    line-height: 7.5rem;
+    /* 109.091% */
+    text-transform: capitalize;
+}
+
+.left-col .subscription {
+    color: #FFF;
+    font-family: Roboto;
+    font-size: 1.125rem;
+    font-weight: 400;
+    line-height: 1.71875rem;
+    text-wrap: wrap;
+    max-width: 38.8125rem;
+}
+
+.getStartBtn {
+    border: none;
+    border-radius: 6.25rem;
+    background: #8B8ADA;
+    width: 16.125rem;
+    height: 4.25rem;
+
+    color: white;
+    font-family: 'Outfit';
+    font-size: 1.25rem;
+    font-weight: 600;
+    line-height: 1.71875rem;
+    /* 137.5% */
+    letter-spacing: 0.125rem;
+    text-transform: uppercase;
+    margin-bottom: 2.31rem;
+
+    cursor: pointer;
+}
+
+.getStartBtn:hover {
+    background: var(--Gradient);
+    transition: 1s all ease-in-out;
+}
+
+
+.right-col {
+    width: 36.0625rem;
+    height: 31.25rem;
+    margin-right: 2rem;
+}
