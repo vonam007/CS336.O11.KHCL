@@ -162,7 +162,7 @@ pip install -r requirements.txt
   * MobileNetV2
   * EfficientNetV2
   * InceptionV3
-* Chúng tôi đã **indexing** sẵn 2 feature extractors là **ResNet50** và **MobileNetV2** cho 2 bộ dataset đã nêu ở trên.
+* Chúng tôi đã **indexing** sẵn 1 feature extractors là **MobileNetV2** cho bộ dataset Oxbuild đã nêu ở trên.
 * Chúng ta có thể **indexing** và **evaluating** cho 2 bộ dataset đã nêu trên cho 6 phương pháp này.
 * Các dòng lệnh ví dụ dưới đây sẽ được sử dụng dựa trên phương pháp **ResNet50**.
 
