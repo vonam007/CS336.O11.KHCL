@@ -45,7 +45,7 @@ class ResNet50_FE:
         base_model = resnet50.ResNet50()
         self.model = Model(inputs=base_model.input, outputs=base_model.get_layer('avg_pool').output)
 
-    def extract_features(self, image) -> np.ndarray:
+    def extract(self, image) -> np.ndarray:
         image = image.resize((224, 224))
         image = image.convert('RGB')
 
@@ -63,7 +63,7 @@ class MobileNetV2__FE:
         base_model = mobilenet_v2.MobileNetV2()
         self.model = Model(inputs=base_model.input, outputs=base_model.get_layer('global_average_pooling2d').output)
 
-    def extract_features(self, image) -> np.ndarray:
+    def extract(self, image) -> np.ndarray:
         image = image.resize((224, 224))
         image = image.convert('RGB')
 
