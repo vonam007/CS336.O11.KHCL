@@ -18,6 +18,7 @@
 * [Chuẩn bị dataset](#chuẩn-bị-dataset)
 * [Indexing và Evaluating](#indexing-và-evaluating)
 * [Chạy hệ thống trên web](#chạy-hệ-thống-trên-web)
+* [video demo](#video-demo)
 
 ## [GIỚI THIỆU MÔN HỌC](#top)
 * **Tên môn học:** Truy vấn thông tin đa phương tiện - Multimedia Information Retrieval
@@ -226,3 +227,6 @@ pip install -r requirements.txt
 ```bash
 flask run
 ```
+
+## [VIDEO DEMO](#top)
+* Xem Video Demo tại [đây]()
