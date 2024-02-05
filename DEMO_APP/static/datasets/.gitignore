@@ -4,7 +4,7 @@
 # Except .gitignore file
 !.gitignore
 
-!paris/binary/MobileNetV2
-!paris/binary/ResNet50
-!oxbuild/binary/MobileNetV2
-!oxbuild/binary/ResNet50
+!paris/binary/MobileNetV2/*
+!paris/binary/ResNet50/*
+!oxbuild/binary/MobileNetV2/*
+!oxbuild/binary/ResNet50/*
