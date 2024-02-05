@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CS336</title>
+
+    <link rel="stylesheet" href="/static/frontend/css/search.css">
+</head>
+
+<body>
+    <div class="header">
+        <div class="logo">
+            <img src="/static/frontend/src/Logo.png" alt="" class="logoimg">
+        </div>
+        <ul class="navbar">
+            <li><a href="{{ url_for('home') }}" class="nav-item">Home</a></li>
+            <li><a href="{{ url_for('search') }}" class="nav-item">Search</a></li>
+            <li><a href="{{ url_for('about') }}" class="nav-item">About Us</a></li>
+        </ul>
+    </div>
+
+    <div class="search-contain">
+        <div class="title">search box</div>
+        <form action="/result" method="post" enctype="multipart/form-data">
+            <div class="topk_method">
+                <div class="topk">
+                    <div class="slidecontainer">
+                        <label for="volume" style="margin-bottom: 10px">Number of outcomes</label>
+                        <div class="range_value">
+                            <input type="range" min="8" max="200" step="4" class="slider" id="myRange" name="K"
+                                value="32" />
+                            <div class="value_box">
+                                <span id="demo"></span>
+                            </div>
+                        </div>
+                    </div>
+                    <script>
+                        var slider = document.getElementById("myRange");
+                        var output = document.getElementById("demo");
+                        output.innerHTML = slider.value;
+
+                        slider.oninput = function () {
+                            output.innerHTML = this.value;
+                        };
+                    </script>
+                </div>
+            </div>
+            <div class="choose_method">
+                <div class="method_  choose_item">
+                    <label for="method">Method</label>
+                    <select name="method" id="method" required>
+                        <option disabled selected value="" >Choose a method</option>
+                        <option value="VGG16">VGG16</option>
+                        <option value="Xception">Xception</option>
+                        <option value="ResNet50">ResNet50</option>
+                        <option value="MobileNetV2">MobileNetV2</option>
+                        <option value="EfficientNetV2">EfficientNetV2</option>
+                        <option value="InceptionV3">InceptionV3</option>
+                    </select>
+                </div>
+                <div class="dataset_  choose_item">
+                    <label for="dataset">Dataset</label>
+                    <select name="dataset" id="dataset" required>
+                        <option disabled selected value="">Choose a Dataset</option>
+                        <option value="oxbuild">oxbuild</option>
+                        <option value="paris">paris</option>
+                    </select>
+                </div>
+            </div>
+            <div class="upload_image">
+                <label for="image" id="uploadBtn">Upload an image</label>
+                <input type="file" id="uploaded_img" name="uploaded_img" >
+                <input type="text" name="urlfile" id="urlfile"  hidden="true">
+                <img src="" alt="" id="uploading_img" >
+            </div>  
+            <button type="submit" class="submitBtn" id="submitBtn" hidden="true">Search by image</button>
+        </form>
+
+    </div>
+    <script src="https://code.jquery.com/jquery-3.6.4.min.js"></script>
+    <script src="/static/frontend/js/search.js"></script>
+    <script src="/static/frontend/js/main.js"></script>
+</body>
+
+</html>

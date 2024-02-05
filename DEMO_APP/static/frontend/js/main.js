@@ -8,13 +8,19 @@ document.addEventListener('DOMContentLoaded', function () {
     if (window.location.pathname.split("/").pop() == 'about') {
         navItems[2].classList.add('active');
     }
+    if (window.location.pathname.split("/").pop() == 'result') {
+        navItems[1].classList.add('active');
+    }
     if (window.location.pathname.split("/").pop() == 'search') {
         navItems[1].classList.add('active-special');
     }
 
     var logo = document.getElementsByClassName('logoimg');
     logo[0].addEventListener('click', function () {
-        window.location.href = 'home.html';
+        window.location.href = 'home';
     });
     logo[0].style.cursor = 'pointer';
+
 });
+
+

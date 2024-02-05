@@ -7,7 +7,7 @@ from scipy.spatial.distance import cosine
 import cv2 as cv
 from pathlib import Path
 from tqdm import tqdm
-from feature_extraction import VGG16_FE, Xception_FE, ResNet50_FE, MobileNetV2__FE, EfficientNetV2__FE, InceptionV3__FE
+from retrieval_system.feature_extraction import VGG16_FE, Xception_FE, ResNet50_FE, MobileNetV2__FE, EfficientNetV2__FE, InceptionV3__FE
 import argparse
 
 def indexing():
@@ -42,7 +42,7 @@ def indexing():
         dump(features, features_file)
         dump(image_paths, image_paths_file)
 
-def retrieve_image(query_image, K=16) -> tuple:
+def retrieve_image(query_image, K=16, methods_folder_path="", feature_extractor="null") -> tuple:
     # Start counting time
     start = time.time()
 
@@ -209,7 +209,7 @@ if __name__ == "__main__":
     if args.mode == 'Indexing':
         indexing()
     elif args.mode == 'Retrieve':
-        result, time_taken = retrieve_image(args.q, args.k)
+        result, time_taken = retrieve_image(args.q, args.k, methods_folder_path, feature_extractor)
         print("Time taken:", time_taken)
         print(*result, sep='\n')
     elif args.mode == 'Evaluate':

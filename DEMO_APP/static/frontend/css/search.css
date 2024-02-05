@@ -1,0 +1,176 @@
+@import url(style.css);
+
+body {
+    background: var(--Gradient);
+}
+
+.search-contain {
+    margin-top: 2rem;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+}
+
+.search-contain .title {
+    color: var(--Dark-Blue);
+    font-family: 'Outfit';
+    font-size: 3rem;
+    font-style: normal;
+    font-weight: 900;
+    line-height: 1.71875rem;
+    /* 57.292% */
+    letter-spacing: 1.17rem;
+    text-transform: uppercase;
+    margin-bottom: 2.87rem;
+}
+
+form {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+
+
+.topk_method {
+    margin-top: 2.87rem;
+    width: 480px;
+}
+
+.topk_method label {
+    font-size: 24px;
+    font-weight: 400;
+}
+
+.slidecontainer {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    height: 100px;
+    align-items: center;
+}
+
+.range_value {
+    width: 100%;
+    margin: 0px;
+    height: 40px;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-evenly;
+    margin: 5px;
+}
+
+.slider {
+    -webkit-appearance: none;
+    width: 75%;
+    height: 15px;
+    border-radius: 10px;
+    background: #fff;
+    outline: none;
+    opacity: 0.8;
+    -webkit-transition: .2s;
+    transition: opacity .2s;
+    margin-right: 7px;
+}
+
+.slider::-webkit-slider-thumb {
+    -webkit-appearance: none;
+    /* Override default look */
+    appearance: none;
+    width: 30px;
+    /* Set a specific slider handle width */
+    height: 30px;
+    /* Slider handle height */
+    background: #000;
+    /* Green background */
+    border-radius: 50%;
+    cursor: pointer;
+    /* Cursor on hover */
+}
+
+.slider:hover {
+    opacity: 1;
+}
+
+.value_box {
+    border-radius: 5px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: #fff;
+    border: solid 2px;
+    height: 100%;
+    width: 40px;
+}
+
+.choose_method {
+    margin-top: 2.87rem;
+    width: 650px;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-evenly;
+}
+.choose_method .choose_item {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+
+.choose_method .choose_item label {
+    margin-bottom: 10px;
+    font-size: 24px;
+    font-weight: 400;
+}
+.choose_item select {
+    width: 265px;
+    height: 50px;
+    border-radius: 5px;
+    border: solid 2px black;
+    font-size: 18px;
+    font-weight: 400;
+    padding: 5px;
+}
+.upload_image {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+.upload_image label {
+    margin-top: 2.87rem;
+    margin-bottom: 2.87rem;
+    font-size: 24px;
+    font-weight: 400;
+    border: solid 2px #fff;
+    color: #fff;
+    border-radius: 50px;
+    display: block;
+    width: 230px;
+    height: 80px;
+    line-height: 80px;
+    text-align: center;
+    cursor: pointer;
+}
+.submitBtn {
+    margin-top: 2.87rem;
+    margin-bottom: 2.87rem;
+    background: none;
+    border: solid 2px #fff;
+    color: #fff;
+    width: 230px;
+    font-size: 24px;
+    border-radius: 50px;
+    height: 80px;
+    
+    cursor: pointer;
+}
+
+#uploaded_img {
+    width: 600px;
+    height: auto;
+    margin-bottom: 100px;
+}
