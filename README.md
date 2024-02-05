@@ -229,4 +229,4 @@ flask run
 ```
 
 ## [VIDEO DEMO](#top)
-* Xem Video Demo tại [đây]()
+* Xem Video Demo tại [đây](https://drive.google.com/drive/folders/1_TRmWNazz_qxe-vCIgQ0C0ajDd87tUHE?usp=sharing)
