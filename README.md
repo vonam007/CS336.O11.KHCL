@@ -18,7 +18,6 @@
 * [Chuẩn bị dataset](#chuẩn-bị-dataset)
 * [Indexing và Evaluating](#indexing-và-evaluating)
 * [Chạy hệ thống trên web](#chạy-hệ-thống-trên-web)
-* [Demo video](#demo-video)
 
 ## [GIỚI THIỆU MÔN HỌC](#top)
 * **Tên môn học:** Truy vấn thông tin đa phương tiện - Multimedia Information Retrieval
